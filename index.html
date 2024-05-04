@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Welcome</title>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="about.css">
+<link rel="stylesheet" href="gallery.css">
+<link rel="stylesheet" href="social.css"> 
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1f1f1f;
+        color: #fff;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    header {
+        padding: 20px;
+        text-align: center;
+        animation: changeBackgroundColor 5s infinite alternate;
+    }
+    
+    /* Animasi untuk latar belakang judul */
+    @keyframes changeBackgroundColor {
+        0% {
+            background-color: #ffc107;
+        }
+        50% {
+            background-color: #000;
+        }
+        100% {
+            background-color: #ffc107;
+        }
+    }
+    
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #ffc107;
+        padding: 20px;
+        text-align: center;
+        animation: changeBackgroundColor 5s infinite alternate;
+    }
+    
+    /* Animasi untuk latar belakang navigasi */
+    @keyframes changeBackgroundColor {
+        0% {
+            background-color: #ffc107;
+        }
+        50% {
+            background-color: #000;
+        }
+        100% {
+            background-color: #ffc107;
+        }
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        position: relative;
+    }
+    
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: #ffc107;
+        transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+    
+    nav ul li a:hover {
+        background-color: #ffc107;
+        color: #000;
+    }
+    
+    main, section, footer {
+        padding: 20px;
+    }
+    
+    section {
+        background-color: #444;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    
+    .about {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    .bio {
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        color: #fff;
+        width: 300px;
+        margin-left: 20px;
+    }
+    
+    .profile-picture {
+        max-width: 300px;
+        border-radius: 10px;
+    }
+
+    /* Menyembunyikan elemen tertentu di perangkat seluler */
+    @media (max-width: 768px) {
+        .desktop-only {
+            display: none;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header class="container">
+    <h1>My Website Album</h1>
+</header>
+
+<nav class="container">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="social.html">Social Media</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <section class="intro">
+        <p>Welcome to my website album. This website contains my screenshots which contain my daily strengths. Enjoy this website :3</p>
+        <p>About me ada di About page ya</p>
+        <div class="tenor-gif-embed" data-postid="9615156950207548718" data-share-method="host" data-aspect-ratio="1" data-width="50%"><a href="https://tenor.com/view/gojo-satoru-satoru-gojo-talking-satoru-gojo-anime-gif-9615156950207548718">Gojo Satoru Sticker</a>from <a href="https://tenor.com/search/gojo-stickers">Gojo Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <button onclick="allowRotate()">Allow Rotation</button> <!-- Tombol untuk mengizinkan rotasi -->
+    </section>
+</main>
+
+<footer class="container">
+    <p>&copy; Rafi Website Developer - Black & Yellow Theme. All Rights Reserved.</p>
+</footer>
+
+<!-- JavaScript untuk mengizinkan rotasi layar secara paksa -->
+<script>
+    function allowRotate() {
+        if (window.screen.orientation.lock) {
+            window.screen.orientation.lock('any');
+        }
+    }
+</script>
+
+</body>
+</html>

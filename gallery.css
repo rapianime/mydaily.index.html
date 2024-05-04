@@ -1,0 +1,15 @@
+nav ul li:nth-child(3) a {
+    position: relative; 
+    color: #ffc107; 
+    background-color: #000; 
+    animation: cyberpunk 3s infinite alternate; 
+}
+
+@keyframes cyberpunk {
+    0% {
+        text-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107, 0 0 30px #ffc107, 0 0 40px #ffc107; /* Efek shadow awal */
+    }
+    100% {
+        text-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107, 0 0 30px #ffc107, 0 0 50px #ffc107; /* Efek shadow akhir */
+    }
+}

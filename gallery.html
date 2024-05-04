@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website Album - Gallery</title>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="about.css">
+<link rel="stylesheet" href="gallery.css">
+<link rel="stylesheet" href="social.css"> 
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1f1f1f;
+        color: #fff;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        padding: 20px;
+        text-align: center;
+        animation: changeHeaderColor 5s infinite alternate;
+    }
+
+    @keyframes changeHeaderColor {
+        0% {
+            background-color: #ffc107;
+        }
+        50% {
+            background-color: #000;
+        }
+        100% {
+            background-color: #ffc107;
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #ffc107;
+        padding: 20px;
+        text-align: center;
+        animation: changeNavColor 5s infinite alternate;
+    }
+
+    @keyframes changeNavColor {
+        0% {
+            background-color: #ffc107;
+        }
+        50% {
+            background-color: #000;
+        }
+        100% {
+            background-color: #ffc107;
+        }
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        position: relative;
+    }
+
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: #ffc107;
+        transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    nav ul li a:hover {
+        background-color: #ffc107;
+        color: #000;
+    }
+
+    main, section, footer {
+        padding: 20px;
+    }
+
+    section {
+        background-color: #444;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .about {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .bio {
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        color: #fff;
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    .profile-picture {
+        max-width: 300px;
+        border-radius: 10px;
+        cursor: pointer; /* Menjadikan kursor menjadi tanda tangan saat dihover */
+        margin-right: 20px; /* Tambahkan jarak di sebelah kanan */
+    }
+
+    /* Deskripsi overlay */
+    .description-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .description-content {
+        color: #fff;
+        text-align: left; /* Ubah menjadi kiri */
+        padding: 20px;
+        background-color: #333;
+        border-radius: 10px;
+        display: flex; /* Menjadikan konten deskripsi flexbox */
+    }
+
+    .description-text {
+        flex-grow: 1; /* Biarkan teks deskripsi memperluas sebanyak mungkin */
+        padding-right: 20px; /* Berikan ruang di sebelah kanan teks */
+    }
+
+    .description-image {
+        max-width: 150px; /* Ubah ukuran gambar */
+        height: auto;
+    }
+</style>
+</head>
+<body>
+
+<header class="container">
+    <h1>My Website Album - Gallery</h1>
+</header>
+
+<nav class="container">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="social.html">Social Media</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="about">
+        <div class="image-container">
+            <img src="album/Cosplay Polisi.png" alt="Cosplay Polisi" class="profile-picture" onclick="showDescription('Cosplay Polisi', 'gabut cosplay polisi dulu di roblox😹😹😹', 'album/Cosplay Polisi.png')">
+        </div>
+        <div class="image-container">
+            <img src="album/Berlayar.png" alt="Berlayar" class="profile-picture" onclick="showDescription('Berlayar', 'perang duluu😹', 'album/Berlayar.png')">
+        </div>
+    </div>
+</div>
+
+<footer class="container">
+    <p>&copy; Rafi Website Developer - All Rights Reserved.</p>
+</footer>
+
+<!-- Deskripsi overlay -->
+<div class="description-overlay" onclick="hideDescription()">
+    <div class="description-content" id="descriptionContent"></div>
+</div>
+
+<script>
+    function showDescription(title, description, imageUrl) {
+        var descriptionContent = document.getElementById('descriptionContent');
+        descriptionContent.innerHTML = '<div class="description-text"><h3>' + title + '</h3><p>' + description + '</p></div>' + '<img src="' + imageUrl + '" alt="' + title + '" class="description-image">';
+
+        var overlay = document.querySelector('.description-overlay');
+        overlay.style.display = 'flex';
+    }
+
+    function hideDescription() {
+        var overlay = document.querySelector('.description-overlay');
+        overlay.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

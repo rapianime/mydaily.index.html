@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>My Website Album - Social Media</title>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="about.css">
+<link rel="stylesheet" href="gallery.css">
+<link rel="stylesheet" href="social.css"> 
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1f1f1f;
+        color: #fff;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        padding: 20px;
+        text-align: center;
+        animation: changeHeaderColor 5s infinite alternate;
+    }
+
+    @keyframes changeHeaderColor {
+        0% {
+            background-color: #ffc107;
+        }
+        50% {
+            background-color: #000;
+        }
+        100% {
+            background-color: #ffc107;
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #ffc107;
+        padding: 20px;
+        text-align: center;
+        animation: changeNavColor 5s infinite alternate;
+    }
+
+    @keyframes changeNavColor {
+        0% {
+            background-color: #ffc107;
+        }
+        50% {
+            background-color: #000;
+        }
+        100% {
+            background-color: #ffc107;
+        }
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        position: relative;
+    }
+
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: #ffc107;
+        transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    nav ul li a:hover {
+        background-color: #ffc107;
+        color: #000;
+    }
+
+    main, section, footer {
+        padding: 20px;
+    }
+
+    section {
+        background-color: #444;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* Sesuaikan dengan tinggi yang diinginkan */
+    }
+
+    .social-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-box {
+        margin-left: 10px; /* Menambahkan jarak antar elemen */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan efek transisi */
+    }
+
+    .social-box:hover {
+        transform: scale(1.1); /* Memperbesar gambar saat di-hover */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Menambahkan bayangan saat di-hover */
+    }
+</style>
+</head>
+<body>
+
+<header class="container">
+    <h1>My Website Album - Social Media</h1>
+</header>
+
+<nav class="container">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="social.html">Social Media</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <section class="social">
+        <div class="social-container">
+            <div class="social-box">
+                <a href="https://www.instagram.com/rapikerenbgt">
+                    <img src="logo/Ig.png" alt="Instagram" style="width: 50px; height: 50px;">
+                </a>
+            </div>            
+            <div class="social-box">
+                <a href="https://twitter.com/Rapi42039890">
+                    <img src="logo/Twitter.png" alt="Twitter" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+            <div class="social-box">
+                <a href="https://www.youtube.com/@RapiKeren">
+                    <img src="logo/Youtube.png" alt="Youtube" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="container">
+    <p>&copy; Rafi Website Developer - All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
